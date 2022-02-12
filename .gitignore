@@ -93,3 +93,7 @@ ENV/
 # Spyder project settings
 .spyderproject
 
+.DS_Store
+
+# free and paid for font packs for ADYS can be downloaded from: http://adysfont.com/download/
+catalog/static/fonts/ADYS-*

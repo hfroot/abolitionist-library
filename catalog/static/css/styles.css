@@ -1,6 +1,90 @@
+@font-face {
+    font-family: 'Adys';
+    src: local('ADYS'), url('../fonts/ADYS-Regular-V5-4.ttf') format("truetype");
+}
+
+body {
+    font-family: 'Adys';
+}
+
+.frame {
+    border: 0.5em solid #000;
+}
+
+#introduction {
+    padding: 0.5em;
+}
+
+#introduction > p {
+    margin: 0;
+}
+
+/* books */
+
+.book-spine {
+    position: relative;
+}
+
+.book-spine:hover {
+    background-color: plum !important;
+}
+
+.book-spine > .title {
+transform: rotate(-90deg);
+transform-origin: bottom left;
+position: absolute;
+bottom: 0.3em;
+left: 3em;
+width: 80vh;
+font-weight: bold;
+}
+
+.book-spine > .author {
+    /* position */
+transform: rotate(-90deg);
+transform-origin: bottom left;
+position: absolute;
+bottom: 0;
+left: 7em;
+width: 80vh;
+/* misc */
+font-size: 1.25em;
+}
+
+/* links */
+
+#catalog {
+    background-color: #fff;
+}
+
+#catalog > p {
+    font-size: 2em;
+    margin: 0 0;
+}
+
+#catalog:hover {
+    background-color: plum;
+}
+
+a#instagram {
+    text-decoration: none;
+    color: #000;
+}
+
+#instagram > div {
+    height: 6vh;
+    margin: 4px;
+    background-image: url("../images/instagram/bw.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#instagram > div:hover {
+    background-image: url("../images/instagram/colour.png");
+}
+
 .sidebar-nav {
     margin-top: 20px;
     padding: 0;
     list-style: none;
 }
-

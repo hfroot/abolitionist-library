@@ -1,32 +1,45 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-<h1>Local Library Home</h1>
-
-<p>Welcome to <em>LocalLibrary</em>, a very basic Django website developed as a <a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Tutorial_local_library_website">tutorial example</a> on the Mozilla Developer Network.</p>
-<p>The tutorial demonstrates how to create a Django skeleton website and application, define URL mappings, views (including Generic List and Detail Views), models and templates.</p>
-
-
-<h2>UML Models</h2>
-<p>An UML diagram of the site's Django model structure is shown below. </p>
-
-<div>
-{% load static %}
-<img src="{% static "images/local_library_model_uml.png" %}" alt="My image" style="width:555px;height:540px;"/>
-</div>  
-
-
-<h2>Dynamic content</h2>
-
-<p>The library has the following record counts:</p>
-<ul>
-<li><strong>Books:</strong> {{ num_books }}</li>
-<li><strong>Copies:</strong> {{ num_instances }}</li>
-<li><strong>Copies available:</strong> {{ num_instances_available }}</li>
-<li><strong>Authors:</strong> {{ num_authors }}</li>
-</ul>
-
-
-<p>You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}.</p>
-
+<div class="row" style="height: 100vh;">
+    <div class="col-5 px-0 d-flex flex-column">
+        <div class="frame flex-grow-1 d-flex align-items-center justify-content-center">
+            <h1>Abolitionist library</h1>
+        </div>
+        <div class="frame" id="introduction">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+    </div>
+    <div class="col-7 d-flex flex-column">
+        <div class="row flex-nowrap flex-grow-1">
+            <button class="book-spine frame col-3 px-0" style="background-color: lightpink;">
+                <h3 class="title">Why I'm no longer talking to white people about race</h3>
+                <p class="author">Reni Eddo-Lodge</p>
+            </button>
+            <button class="book-spine frame col-3 px-0" style="background-color: lemonchiffon;">
+                <h3 class="title">Becoming Abolitionists</h3>
+                <p class="author">Derecka Purnell</p>
+            </button>
+            <button class="book-spine frame col-3 px-0" style="background-color: palegreen;">
+                <h3 class="title">Why I'm no longer talking to white people about race</h3>
+                <p class="author">Reni Eddo-Lodge</p>
+            </button>
+            <button class="book-spine frame col-3 px-0" style="background-color: powderblue;">
+                <h3 class="title">Becoming Abolitionists</h3>
+                <p class="author">Derecka Purnell</p>
+            </button>
+        </div>
+        <h2>Lastest additions</h2>
+        <div class="row">
+            <div class="frame col-1 px-0">
+                <a href="" id="instagram">
+                    <div alt="follow us on instagram @transformtranscend"></div>
+                </a>
+            </div>
+            <button class="frame col-11 d-flex align-items-center justify-content-center" id="catalog">
+                <p>Our catalogue</p>
+            </button>
+        </div>
+    </div>
+</div>
 {% endblock %}
