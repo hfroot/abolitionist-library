@@ -7,8 +7,47 @@ body {
     font-family: 'Adys';
 }
 
+/* the top level parent div for a template */
+#the-parent {
+    height: 100vh;
+}
+
 .frame {
     border: 0.5em solid #000;
+}
+.frame-lrb {
+    border-left: 0.5em solid #000;
+    border-right: 0.5em solid #000;
+    border-bottom: 0.5em solid #000;
+}
+.frame-b {
+    border-bottom: 0.5em solid #000;
+}
+.frame-tr {
+    border-top: 0.5em solid #000;
+    border-right: 0.5em solid #000;
+}
+.frame-rb {
+    border-right: 0.5em solid #000;
+    border-bottom: 0.5em solid #000;
+}
+
+#banner {
+    position: relative;
+}
+
+#header-logo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#header-logo:hover {
+    background-color: #E9ABCE;
+}
+
+#header-logo > img {
+    width: 9em;
 }
 
 #introduction {
@@ -67,6 +106,7 @@ a#catalog {
 #catalog > p {
     font-size: 2em;
     margin: 0 0;
+    line-height: 2.2em;
 }
 
 #catalog:hover {
@@ -79,8 +119,8 @@ a#instagram {
 }
 
 #instagram > div {
-    height: 6vh;
-    margin: 4px;
+    height: 100%;
+    padding: 8px;
     background-image: url("../images/instagram/bw.png");
     background-size: contain;
     background-repeat: no-repeat;
@@ -88,6 +128,7 @@ a#instagram {
 
 #instagram > div:hover {
     background-image: url("../images/instagram/colour.png");
+    background-color: #000;
 }
 
 .sidebar-nav {
