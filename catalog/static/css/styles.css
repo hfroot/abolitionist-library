@@ -29,26 +29,29 @@ body {
     background-color: plum !important;
 }
 
-.book-spine > .title {
-transform: rotate(-90deg);
-transform-origin: bottom left;
-position: absolute;
-bottom: 0.3em;
-left: 3em;
-width: 80vh;
-font-weight: bold;
-}
+/* bootstrap md width */
+@media (min-width: 768px) {
+    .book-spine > .title {
+        transform: rotate(-90deg);
+        transform-origin: bottom left;
+        position: absolute;
+        bottom: 0.3em;
+        left: 3em;
+        width: 80vh;
+        font-weight: bold;
+    }
 
-.book-spine > .author {
-    /* position */
-transform: rotate(-90deg);
-transform-origin: bottom left;
-position: absolute;
-bottom: 0;
-left: 7em;
-width: 80vh;
-/* misc */
-font-size: 1.25em;
+    .book-spine > .author {
+        /* position */
+        transform: rotate(-90deg);
+        transform-origin: bottom left;
+        position: absolute;
+        bottom: 0;
+        left: 7em;
+        width: 80vh;
+        /* misc */
+        font-size: 1.25em;
+    }
 }
 
 /* links */
