@@ -40,6 +40,8 @@ class Book(models.Model):
         null=True,
         default='en',
     )
+    creation_date = models.DateTimeField(auto_now_add=True)
+    modification_date = models.DateTimeField(auto_now=True)
 
     # book lending admin
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name="owner")

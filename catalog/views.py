@@ -11,8 +11,7 @@ def index(request):
     """View function for home page of site."""
     # Generate counts of some of the main objects
     num_books = Book.objects.all().count()
-    latest_books = Book.objects.all()[0:4]
-    # TODO latest_books = Book.objects.order_by('-creation_date')[0:4]
+    latest_books = Book.objects.order_by('-creation_date')[0:4]
     colours = ["mistyrose", "lemonchiffon", "#d0eed0", "aliceblue"]
     books = []
     for idx, book in enumerate(latest_books):
