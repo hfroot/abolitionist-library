@@ -51,11 +51,8 @@ body {
 }
 
 #introduction {
-    padding: 0.5em;
-}
-
-#introduction > p {
-    margin: 0;
+    padding: 0.6em;
+    font-size: 1.1em;
 }
 
 /* books */
