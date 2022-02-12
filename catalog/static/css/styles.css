@@ -40,6 +40,10 @@ body {
     position: relative;
 }
 
+h1 {
+    text-align: center;
+}
+
 #header-logo {
     position: absolute;
     bottom: 0;
@@ -74,7 +78,7 @@ body {
 
 /* bootstrap md width */
 @media (min-width: 768px) {
-    .book-spine > .title {
+    .spines-standing > .book-spine > .title {
         transform: rotate(-90deg);
         transform-origin: bottom left;
         position: absolute;
@@ -84,7 +88,7 @@ body {
         font-weight: bold;
     }
 
-    .book-spine > .author {
+    .spines-standing > .book-spine > .author {
         /* position */
         transform: rotate(-90deg);
         transform-origin: bottom left;
@@ -139,14 +143,10 @@ a#instagram {
     list-style: none;
 }
 
-/* BOOK LISTING */
+/* BOOK Detail */
 
 .book-cover {
     padding: 3em;
-}
-
-.book-cover > h1 {
-    text-align: center;
 }
 
 .book-cover > p {
@@ -164,4 +164,10 @@ a#instagram {
 .book-footer > p {
     padding: 1em;
     margin-bottom: 0;
+}
+
+/* BOOK listing */
+
+.book-list {
+    padding: 0;
 }

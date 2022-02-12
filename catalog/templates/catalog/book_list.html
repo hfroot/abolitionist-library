@@ -1,21 +1,22 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-    <h1>Book List</h1>
+<div class="d-flex px-0 flex-column flex-md-row">
+    <div class="col-md-2 d-flex flex-md-column justify-content-center px-0" id="banner">
+      <div class="py-3 flex-grow-1 frame">
+        <h1>Our books</h1>
+      </div>
+      <a href="{% url 'index' %}" class="cta frame px-0"><p>Home</p></a>
+    </div>
 
-    {% if book_list %}
-    <ul>
-
-      {% for book in book_list %}
-      <li>
-        <a href="{{ book.get_absolute_url }}">{{ book.title }}</a> ({{book.author}})
-      </li>
-      {% endfor %}
-
-    </ul>
-
-    {% else %}
-      <p>There are no books in the library.</p>
-    {% endif %}       
+    <div class="col-md-10 book-list">
+        {% for book in book_list %}
+        <a href="{{ book.get_absolute_url }}" class="book-spine frame col-12 px-4 pt-4" >
+            <h2 class="title">{{book.title}}</h2>
+            <p class="author">{{book.author}}</p>
+        </a>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}
 
