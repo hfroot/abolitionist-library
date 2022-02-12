@@ -23,10 +23,13 @@ body {
 
 .book-spine {
     position: relative;
+    display: block;
+    color: #000;
 }
 
 .book-spine:hover {
     background-color: plum !important;
+    color: #000;
 }
 
 /* bootstrap md width */

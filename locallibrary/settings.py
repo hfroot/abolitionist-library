@@ -31,6 +31,7 @@ DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 # Set hosts to allow any app on Heroku and the local testing URL
 ALLOWED_HOSTS = ['.herokuapp.com','127.0.0.1']
 
+AUTH_USER_MODEL="catalog.User"
 
 # Application definition
 

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Book, Genre
+from .models import Book, Tag
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -96,13 +96,13 @@ class BookDetailView(generic.DetailView):
 # Classes created for the forms challenge
 class BookCreate(PermissionRequiredMixin, CreateView):
     model = Book
-    fields = ['title', 'author', 'summary', 'isbn', 'genre', 'language']
+    fields = ['title', 'author', 'summary', 'isbn', 'tag', 'language']
     permission_required = 'catalog.can_mark_returned'
 
 
 class BookUpdate(PermissionRequiredMixin, UpdateView):
     model = Book
-    fields = ['title', 'author', 'summary', 'isbn', 'genre', 'language']
+    fields = ['title', 'author', 'summary', 'isbn', 'tag', 'language']
     permission_required = 'catalog.can_mark_returned'
 
 

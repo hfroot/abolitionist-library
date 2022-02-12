@@ -1,14 +1,19 @@
 from django.db import models
 from django.urls import reverse  # To generate URLS by reversing URL patterns
-from django.contrib.auth.models import User  # Required to assign User as a borrower
 from django.conf.global_settings import LANGUAGES
+from django.contrib.auth.models import AbstractUser
 
 
-class Genre(models.Model):
-    """Model representing a book genre (e.g. Science Fiction, Non Fiction)."""
+# recommended to wrap user model : https://docs.djangoproject.com/en/4.0/topics/auth/customizing/#using-a-custom-user-model-when-starting-a-project
+class User(AbstractUser):
+    pass
+
+
+class Tag(models.Model):
+    """Model representing a book tag (e.g. Science Fiction, Non Fiction)."""
     name = models.CharField(
         max_length=200,
-        help_text="Enter a book genre (e.g. Science Fiction, French Poetry etc.)"
+        help_text="Enter a book tag (e.g. Science Fiction, French Poetry etc.)"
         )
 
     def __str__(self):
@@ -25,9 +30,9 @@ class Book(models.Model):
                             unique=True,
                             help_text='13 Character <a href="https://www.isbn-international.org/content/what-isbn'
                                       '">ISBN number</a>', blank=True, null=True)
-    genre = models.ManyToManyField(Genre, help_text="Select a genre for this book", blank=True, null=True)
-    # ManyToManyField used because a genre can contain many books and a Book can cover many genres.
-    # Genre class has already been defined so we can specify the object above.
+    tag = models.ManyToManyField(Tag, help_text="Select a tag for this book", blank=True, null=True)
+    # ManyToManyField used because a tag can contain many books and a Book can cover many tags.
+    # Tag class has already been defined so we can specify the object above.
     language = models.CharField(
         max_length=10,
         choices=LANGUAGES,
@@ -53,11 +58,11 @@ class Book(models.Model):
     class Meta:
         ordering = ['title', 'author']
 
-    def display_genre(self):
-        """Creates a string for the Genre. This is required to display genre in Admin."""
-        return ', '.join([genre.name for genre in self.genre.all()[:3]])
+    def display_tag(self):
+        """Creates a string for the Tag. This is required to display tag in Admin."""
+        return ', '.join([tag.name for tag in self.tag.all()[:3]])
 
-    display_genre.short_description = 'Genre'
+    display_tag.short_description = 'Tag'
 
     def get_absolute_url(self):
         """Returns the url to access a particular book instance."""

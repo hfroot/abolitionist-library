@@ -1,12 +1,16 @@
 from django.contrib import admin
-from .models import Genre, Book
+from .models import Tag, Book
+from django.contrib.auth.admin import UserAdmin
+from .models import User
+
+admin.site.register(User, UserAdmin)
 
 """Minimal registration of Models.
 admin.site.register(Book)
-admin.site.register(Genre)
+admin.site.register(Tag)
 """
 
-admin.site.register(Genre)
+admin.site.register(Tag)
 
 
 class BooksInline(admin.TabularInline):
@@ -20,7 +24,7 @@ class BookAdmin(admin.ModelAdmin):
      - fields to be displayed in list view (list_display)
      - adds inline addition of book instances in book view (inlines)
     """
-    list_display = ('title', 'author', 'display_genre')
+    list_display = ('title', 'author', 'display_tag')
 
 
 admin.site.register(Book, BookAdmin)
