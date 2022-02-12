@@ -2,13 +2,31 @@
 
 {% block content %}
 
-<h1>Title: {{ book.title }}</h1>
-
-<p><strong>Author:</strong> {{ book.author }}</p>
-<p><strong>Summary:</strong> {{ book.summary }}</p>
-<p><strong>ISBN:</strong> {{ book.isbn }}</p> 
-<p><strong>Language:</strong> {{ book.language }}</p>  
-<p><strong>Tag:</strong> {{ book.tag.all|join:", " }}</p>
+<div class="d-flex px-0 flex-column flex-md-row" id="the-parent">
+    <div class="frame d-flex flex-column col-md-5 align-items-center justify-content-center book-cover">
+        <h1>{{ book.title }}</h1>
+        <p>by {{ book.author }}</p>
+    </div>
+    <div class="col-md-7 d-md-flex flex-column px-0">
+        <div class="frame summary flex-grow-1">
+            <h2>Summary</h2>
+            {{ book.summary | linebreaks }}
+        </div>
+        <a class="cta frame" target="_blank" rel="noopener" href="mailto:transformtranscend@protonmail.com?subject=Request to borrow {{book.id}}&body=Could you put me in touch with the owner of {{book.title}} (id: {{book.id}}) please? I would like to borrow this book.">
+            <p>Email us to request to borrow this book!</p>
+        </a>
+        <div class="d-flex flex-column flex-md-row book-footer">
+            <p class="frame"><strong>ISBN:</strong> {{ book.isbn }}</p> 
+            <p class="frame"><strong>Language:</strong> {{ book.language }}</p>  
+            {% if book.tag.all.count %}
+                <p class="frame tags"><strong>Tag:</strong> {{ book.tag.all|join:", " }}</p>
+            {% endif %}
+            <a href="{% url 'books' %}" class="frame cta flex-grow-1">
+                <p>Back to catalogue</p>
+            </a>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
 

@@ -31,6 +31,10 @@ body {
     border-right: 0.5em solid #000;
     border-bottom: 0.5em solid #000;
 }
+.frame-lr {
+    border-left: 0.5em solid #000;
+    border-right: 0.5em solid #000;
+}
 
 #banner {
     position: relative;
@@ -95,18 +99,19 @@ body {
 
 /* links */
 
-a#catalog {
+a.cta {
     color: #000;
     text-decoration: none;
 }
 
-#catalog > p {
+.cta > p {
     font-size: 2em;
     margin: 0 0;
     line-height: 2.2em;
+    text-align: center;
 }
 
-#catalog:hover {
+.cta:hover {
     background-color: plum;
 }
 
@@ -132,4 +137,31 @@ a#instagram {
     margin-top: 20px;
     padding: 0;
     list-style: none;
+}
+
+/* BOOK LISTING */
+
+.book-cover {
+    padding: 3em;
+}
+
+.book-cover > h1 {
+    text-align: center;
+}
+
+.book-cover > p {
+    font-size: 1.5em;
+}
+
+.summary {
+    padding: 3em;
+}
+
+.summary > p {
+    font-size: 1.2em;
+}
+
+.book-footer > p {
+    padding: 1em;
+    margin-bottom: 0;
 }
