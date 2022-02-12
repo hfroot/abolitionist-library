@@ -13,6 +13,15 @@ def index(request):
     num_books = Book.objects.all().count()
     latest_books = Book.objects.all()[0:4]
     # TODO latest_books = Book.objects.order_by('-creation_date')[0:4]
+    colours = ["mistyrose", "lemonchiffon", "#d0eed0", "aliceblue"]
+    books = []
+    for idx, book in enumerate(latest_books):
+        books.append({
+            'title': book.title,
+            'author': book.author,
+            'get_absolute_url': book.get_absolute_url(),
+            'colour': colours[idx]
+        })
 
     # Number of visits to this view, as counted in the session variable.
     num_visits = request.session.get('num_visits', 1)
@@ -23,7 +32,7 @@ def index(request):
         request,
         'index.html',
         context={'num_books': num_books,
-                 'num_visits': num_visits, 'latest_books': latest_books},
+                 'num_visits': num_visits, 'books': books},
     )
 
 
