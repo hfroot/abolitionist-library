@@ -55,7 +55,26 @@ h1 {
 }
 
 #header-logo > img {
-    width: 9em;
+    height: 9em;
+}
+
+@media (max-width: 768px) {
+    #the-parent {
+        height: fit-content;
+    }
+    #header-logo {
+        position: static;
+        display: inline-block;
+        height: fit-content;
+    }
+}
+@media (max-height: 610px) {
+    #the-parent {
+        height: fit-content;
+    }
+    #header-logo > img {
+        height: 20vh;
+    }
 }
 
 #introduction {
@@ -76,7 +95,8 @@ h1 {
     color: #000;
 }
 
-/* bootstrap md width */
+/* bootstrap md width = 768px */
+/* this sets the books standing for wider screens */
 @media (min-width: 768px) {
     .spines-standing > .book-spine > .title {
         transform: rotate(-90deg);
