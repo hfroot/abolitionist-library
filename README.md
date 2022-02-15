@@ -2,6 +2,8 @@
 
 This website website was created for a group to help them organise a floating library. Eventually, users can register books that they have and would like to offer to others to borrow, and find books to borrow themselves.
 
+Hosted on Heroku.
+
 ## Quick Start
 
 To get this project up and running locally on your computer:
